@@ -1,34 +1,18 @@
-import subprocess
-import wolframalpha
-import pyttsx3
-import tk
-import json
-import random
-import operator
-import speech_recognition as sr
 import datetime
-import wikipedia
-import webbrowser
 import os
-import winshell
-import pyjokes
-import feedparser
-import smtplib
-import ctypes
-import time
-import requests
-import shutil
-from clint.textui import progress
-from bs4 import BeautifulSoup
+import webbrowser
 
+import pyjokes
+import pyttsx3
+import pyaudio
+import speech_recognition as sr
+import wikipedia
 
 voicename = "Tashi"
 
-
-
 engine = pyttsx3.init()
 voices = engine.getProperty("voices")
-engine.setProperty("voice", voices[1].id)
+# engine.setProperty("voice", voices[1].id)
 
 
 def speak(audio):
@@ -82,7 +66,7 @@ if __name__ == "__main__":
         if 'wikipedia' or 'tell me more about' in query:
             speak('Searching Wikipedia')
             query = query.replace("Wikipedia", "")
-            results = wikipedia.summary(query, sentences = 3)
+            results = wikipedia.summary(query, sentences=3)
             speak("According to Wikipedia")
             print(results)
             speak(results)

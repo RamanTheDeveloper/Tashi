@@ -71,13 +71,13 @@ if __name__ == "__main__":
             print(results)
             speak(results)
         elif 'open youtube' in query:
-            speak("Here you go to Youtube\n")
+            speak("Here you go Youtube\n")
             webbrowser.open("youtube.com")
 
         elif 'open google' in query:
             speak("Here you go to Google\n")
             webbrowser.open("google.com")
-        elif 'the time' in query:
+        elif 'time' in query:
             strTime = datetime.datetime.now().strftime("% I:% M:% %p")
             speak(f"Sir, the time is {strTime}")
         elif 'how are you' in query:
